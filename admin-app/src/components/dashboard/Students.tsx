@@ -129,8 +129,12 @@ export default function Students() {
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm">
-                  <button className="text-blue-600 hover:text-blue-800 mr-3">Edit</button>
-                  <button className="text-red-600 hover:text-red-800">Delete</button>
+                  <button className="text-blue-600 hover:text-blue-800 mr-3" title="Edit">
+                    ✏️
+                  </button>
+                  <button className="text-red-600 hover:text-red-800" title="Delete">
+                    🗑️
+                  </button>
                 </td>
               </tr>
             ))}

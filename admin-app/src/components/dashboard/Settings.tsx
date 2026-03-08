@@ -36,25 +36,25 @@ export default function Settings() {
       <div className="flex space-x-4 mb-6">
         <button
           onClick={() => setActiveTab('school')}
-          className={`px-4 py-2 rounded ${activeTab === 'school' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeTab === 'school' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           School Info
         </button>
         <button
           onClick={() => setActiveTab('academic')}
-          className={`px-4 py-2 rounded ${activeTab === 'academic' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeTab === 'academic' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           Academic Settings
         </button>
         <button
           onClick={() => setActiveTab('users')}
-          className={`px-4 py-2 rounded ${activeTab === 'users' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeTab === 'users' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           User Management
         </button>
         <button
           onClick={() => setActiveTab('backup')}
-          className={`px-4 py-2 rounded ${activeTab === 'backup' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeTab === 'backup' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           Backup & Security
         </button>
@@ -68,7 +68,7 @@ export default function Settings() {
               <label className="block text-gray-700 mb-2">School Name</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={schoolSettings.name}
                 onChange={(e) => setSchoolSettings({...schoolSettings, name: e.target.value})}
               />
@@ -77,7 +77,7 @@ export default function Settings() {
               <label className="block text-gray-700 mb-2">Address</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={schoolSettings.address}
                 onChange={(e) => setSchoolSettings({...schoolSettings, address: e.target.value})}
               />
@@ -86,7 +86,7 @@ export default function Settings() {
               <label className="block text-gray-700 mb-2">Phone</label>
               <input
                 type="tel"
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={schoolSettings.phone}
                 onChange={(e) => setSchoolSettings({...schoolSettings, phone: e.target.value})}
               />
@@ -95,7 +95,7 @@ export default function Settings() {
               <label className="block text-gray-700 mb-2">Email</label>
               <input
                 type="email"
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={schoolSettings.email}
                 onChange={(e) => setSchoolSettings({...schoolSettings, email: e.target.value})}
               />
@@ -104,13 +104,13 @@ export default function Settings() {
               <label className="block text-gray-700 mb-2">Website</label>
               <input
                 type="url"
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={schoolSettings.website}
                 onChange={(e) => setSchoolSettings({...schoolSettings, website: e.target.value})}
               />
             </div>
             <div className="md:col-span-2">
-              <button type="submit" className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700">
+              <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
                 Save School Settings
               </button>
             </div>
@@ -126,7 +126,7 @@ export default function Settings() {
               <label className="block text-gray-700 mb-2">Academic Year</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={academicSettings.currentYear}
                 onChange={(e) => setAcademicSettings({...academicSettings, currentYear: e.target.value})}
               />
@@ -134,7 +134,7 @@ export default function Settings() {
             <div>
               <label className="block text-gray-700 mb-2">Current Term</label>
               <select
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={academicSettings.currentTerm}
                 onChange={(e) => setAcademicSettings({...academicSettings, currentTerm: e.target.value})}
               >
@@ -147,7 +147,7 @@ export default function Settings() {
               <label className="block text-gray-700 mb-2">Term Start Date</label>
               <input
                 type="date"
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={academicSettings.termStartDate}
                 onChange={(e) => setAcademicSettings({...academicSettings, termStartDate: e.target.value})}
               />
@@ -156,7 +156,7 @@ export default function Settings() {
               <label className="block text-gray-700 mb-2">Term End Date</label>
               <input
                 type="date"
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={academicSettings.termEndDate}
                 onChange={(e) => setAcademicSettings({...academicSettings, termEndDate: e.target.value})}
               />
@@ -164,7 +164,7 @@ export default function Settings() {
             <div>
               <label className="block text-gray-700 mb-2">Grading System</label>
               <select
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 value={academicSettings.gradingSystem}
                 onChange={(e) => setAcademicSettings({...academicSettings, gradingSystem: e.target.value})}
               >
@@ -174,7 +174,7 @@ export default function Settings() {
               </select>
             </div>
             <div className="md:col-span-2">
-              <button type="submit" className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700">
+              <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
                 Save Academic Settings
               </button>
             </div>
@@ -192,8 +192,12 @@ export default function Settings() {
                 <div className="text-sm text-gray-600">System Administrator</div>
               </div>
               <div className="flex gap-2">
-                <button className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm">Edit</button>
-                <button className="bg-red-100 text-red-700 px-3 py-1 rounded text-sm">Disable</button>
+                <button className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm" title="Edit">
+                  ✏️
+                </button>
+                <button className="bg-red-100 text-red-700 px-3 py-1 rounded text-sm" title="Disable">
+                  🚫
+                </button>
               </div>
             </div>
             <div className="flex justify-between items-center p-4 border rounded">

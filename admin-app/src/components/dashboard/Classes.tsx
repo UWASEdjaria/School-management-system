@@ -112,11 +112,11 @@ export default function Classes() {
               <button className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm hover:bg-blue-200">
                 View Students
               </button>
-              <button className="bg-green-100 text-green-700 px-3 py-1 rounded text-sm hover:bg-green-200">
-                Edit
+              <button className="bg-green-100 text-green-700 px-3 py-1 rounded text-sm hover:bg-green-200" title="Edit">
+                ✏️
               </button>
-              <button className="bg-red-100 text-red-700 px-3 py-1 rounded text-sm hover:bg-red-200">
-                Delete
+              <button className="bg-red-100 text-red-700 px-3 py-1 rounded text-sm hover:bg-red-200" title="Delete">
+                🗑️
               </button>
             </div>
           </div>

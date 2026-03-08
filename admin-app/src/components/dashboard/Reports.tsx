@@ -32,19 +32,19 @@ export default function Reports() {
       <div className="flex space-x-4 mb-6">
         <button
           onClick={() => setActiveReport('academic')}
-          className={`px-4 py-2 rounded ${activeReport === 'academic' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeReport === 'academic' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           Academic Reports
         </button>
         <button
           onClick={() => setActiveReport('attendance')}
-          className={`px-4 py-2 rounded ${activeReport === 'attendance' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeReport === 'attendance' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           Attendance Reports
         </button>
         <button
           onClick={() => setActiveReport('financial')}
-          className={`px-4 py-2 rounded ${activeReport === 'financial' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeReport === 'financial' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           Financial Reports
         </button>
@@ -112,7 +112,7 @@ export default function Reports() {
             <div className="flex gap-2">
               <input
                 type="date"
-                className="px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                 defaultValue="2024-01-20"
               />
               <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">

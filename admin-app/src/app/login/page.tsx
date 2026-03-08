@@ -33,7 +33,7 @@ export default function AdminLogin() {
               id="email"
               type="email"
               placeholder="Enter admin email"
-              className="w-full placeholder-gray-300 px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+              className="w-full placeholder-gray-300 px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
               required
@@ -46,20 +46,20 @@ export default function AdminLogin() {
               id="password"
               type="password"
               placeholder="Enter admin password"
-              className="w-full placeholder-gray-300 px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+              className="w-full placeholder-gray-300 px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
               value={formData.password}
               onChange={(e) => setFormData({...formData, password: e.target.value})}
               required
             />
           </div>
           
-          <button type="submit" className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">
+          <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
             Login
           </button>
         </form>
         
         <p className="mt-4 text-center text-gray-600">
-          <a href="/" className="text-red-600">← Back to Home</a>
+          <a href="/" className="text-blue-600">← Back to Home</a>
         </p>
       </div>
     </div>

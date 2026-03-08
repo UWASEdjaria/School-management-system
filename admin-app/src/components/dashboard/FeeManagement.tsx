@@ -32,19 +32,19 @@ export default function FeeManagement() {
       <div className="flex space-x-4 mb-6">
         <button
           onClick={() => setActiveTab('overview')}
-          className={`px-4 py-2 rounded ${activeTab === 'overview' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeTab === 'overview' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           Overview
         </button>
         <button
           onClick={() => setActiveTab('structure')}
-          className={`px-4 py-2 rounded ${activeTab === 'structure' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeTab === 'structure' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           Fee Structure
         </button>
         <button
           onClick={() => setActiveTab('payments')}
-          className={`px-4 py-2 rounded ${activeTab === 'payments' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-4 py-2 rounded ${activeTab === 'payments' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
         >
           Payment History
         </button>
@@ -126,7 +126,9 @@ export default function FeeManagement() {
                     <td className="py-3 px-4">₹{fee.activities.toLocaleString()}</td>
                     <td className="py-3 px-4 font-bold">₹{(fee.tuition + fee.meals + fee.transport + fee.activities).toLocaleString()}</td>
                     <td className="py-3 px-4">
-                      <button className="text-blue-600 hover:text-blue-800">Edit</button>
+                      <button className="text-blue-600 hover:text-blue-800" title="Edit">
+                        ✏️
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -144,9 +146,9 @@ export default function FeeManagement() {
               <input
                 type="text"
                 placeholder="Search student..."
-                className="px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-red-500"
+                className="px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
-              <button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+              <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                 Export
               </button>
             </div>

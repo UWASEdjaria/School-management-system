@@ -25,7 +25,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
             key={item.id}
             onClick={() => setActiveTab(item.id)}
             className={`w-full flex items-center px-6 py-3 text-left hover:bg-gray-50 ${
-              activeTab === item.id ? 'bg-red-50 border-r-2 border-red-500 text-red-600' : 'text-gray-800'
+              activeTab === item.id ? 'bg-blue-50 border-r-2 border-blue-500 text-blue-600' : 'text-gray-800'
             }`}
           >
             <span className="mr-3">{item.icon}</span>
