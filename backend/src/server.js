@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
+import feeRoutes from './routes/feeRoutes.js';
 
 dotenv.config();
 connectDB();
@@ -20,6 +21,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/fees', feeRoutes);
 
 app.listen(PORT, () => {
   console.log(`Client Backend on port ${PORT}`);
