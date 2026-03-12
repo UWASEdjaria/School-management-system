@@ -1,8 +1,10 @@
 <?php
 // db.php - PDO database connection using .env variables
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
+require_once __DIR__ . '/src/Utils/Env.php';
+use App\Utils\Env;
+
+Env::load(__DIR__ . '/../.env');
 
 $host = $_ENV['DB_HOST'] ?? 'localhost';
 $db   = $_ENV['DB_NAME'] ?? 'schol_management';
