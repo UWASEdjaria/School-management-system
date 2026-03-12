@@ -37,7 +37,7 @@ export default function AdminLogin() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0f172a] text-[#f8fafc] font-sans">
       {/* Background Blobs */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#4f46e5]/10 blur-[80px] rounded-full"></div>
         <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#c084fc]/10 blur-[80px] rounded-full"></div>
       </div>
@@ -61,7 +61,7 @@ export default function AdminLogin() {
             <input
               type="text"
               placeholder="e.g. admin_01"
-              className="w-full bg-[#0f172a] border border-white/10 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#4f46e5]/50 focus:border-[#4f46e5] transition-all text-white placeholder-white/20"
+              className="w-full bg-[#0f172a] border border-white/10 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#4f46e5]/50 focus:border-[#4f46e5] transition-all text-white placeholder-white/20 cursor-text relative z-20"
               value={formData.username}
               onChange={(e) => setFormData({...formData, username: e.target.value})}
               required
@@ -73,7 +73,7 @@ export default function AdminLogin() {
             <input
               type="password"
               placeholder="••••••••"
-              className="w-full bg-[#0f172a] border border-white/10 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#4f46e5]/50 focus:border-[#4f46e5] transition-all text-white placeholder-white/20"
+              className="w-full bg-[#0f172a] border border-white/10 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#4f46e5]/50 focus:border-[#4f46e5] transition-all text-white placeholder-white/20 cursor-text relative z-20"
               value={formData.password}
               onChange={(e) => setFormData({...formData, password: e.target.value})}
               required
