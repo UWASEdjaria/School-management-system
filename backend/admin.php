@@ -34,15 +34,15 @@ switch ($path) {
 
     case '/unverified-devices':
         if ($method === 'GET') {
-            $stmt = $pdo->query("SELECT d.*, u.username FROM devices d JOIN users u ON d.user_id = u.id WHERE d.is_verified = 0");
+            $stmt = $pdo->query("SELECT d.*, u.username FROM devices d JOIN users u ON d.userId = u.id WHERE d.isVerified = 0");
             echo json_encode($stmt->fetchAll());
         }
         break;
 
     case '/verify-device':
         if ($method === 'POST') {
-            $deviceId = $input['verificationDeviceId'] ?? $input['device_id'];
-            $stmt = $pdo->prepare("UPDATE devices SET is_verified = 1 WHERE device_id = ?");
+            $deviceId = $input['verificationDeviceId'] ?? $input['deviceId'];
+            $stmt = $pdo->prepare("UPDATE devices SET isVerified = 1 WHERE deviceId = ?");
             $stmt->execute([$deviceId]);
             echo json_encode(['success' => 'Device verified']);
         }

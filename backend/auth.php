@@ -44,18 +44,18 @@ function login($data, $pdo, $jwtSecret) {
 
     // Device Verification Requirement
     if ($deviceId) {
-        $stmt = $pdo->prepare("SELECT * FROM devices WHERE user_id = ? AND device_id = ?");
+        $stmt = $pdo->prepare("SELECT * FROM devices WHERE userId = ? AND deviceId = ?");
         $stmt->execute([$user['id'], $deviceId]);
         $device = $stmt->fetch();
 
         if (!$device) {
             // Register new device as unverified
-            $stmt = $pdo->prepare("INSERT INTO devices (user_id, device_id, is_verified) VALUES (?, ?, 0)");
+            $stmt = $pdo->prepare("INSERT INTO devices (userId, deviceId, isVerified) VALUES (?, ?, 0)");
             $stmt->execute([$user['id'], $deviceId]);
             return ['message' => 'Device pending verification by Admin', 'status' => 'unverified'];
         }
 
-        if (!$device['is_verified']) {
+        if (!$device['isVerified']) {
             return ['message' => 'Device pending verification by Admin', 'status' => 'unverified'];
         }
     } else {
