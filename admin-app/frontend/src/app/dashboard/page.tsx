@@ -1,5 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
 import Sidebar from '@/components/dashboard/Sidebar';
 import Header from '@/components/dashboard/Header';
 import Overview from '@/components/dashboard/Overview';
@@ -13,6 +15,14 @@ import Settings from '@/components/dashboard/Settings';
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = Cookies.get('token');
+    if (!token) {
+      router.push('/login');
+    }
+  }, [router]);
 
   return (
     <div className="flex h-screen bg-gray-100">
