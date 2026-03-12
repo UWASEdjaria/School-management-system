@@ -1,0 +1,14 @@
+node_modules/
+**/node_modules/
+.next/
+**/ .next/
+vendor/
+.env
+*.log
+.DS_Store
+dist/
+build/
+.vscode/
+.qodo/
+.hintrc
+index.lock
