@@ -1,12 +1,12 @@
 import api, { getDeviceId } from '../utils/api';
 import Cookies from 'js-cookie';
 
-export const login = async (email: string, password: string) => {
+export const login = async (username: string, password: string) => {
   const deviceId = getDeviceId();
   const deviceName = 'Student/Parent Web Dashboard';
 
-  const response = await api.post('/auth/login', {
-    email,
+  const response = await api.post('/index.php/login', {
+    username,
     password,
     deviceId,
     deviceName
@@ -24,7 +24,7 @@ export const register = async (userData: any) => {
   const deviceId = getDeviceId();
   const deviceName = 'Student/Parent Web Dashboard';
 
-  const response = await api.post('/auth/register', {
+  const response = await api.post('/index.php/register', {
     ...userData,
     deviceId,
     deviceName

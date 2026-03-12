@@ -5,7 +5,7 @@ import { login } from '../../services/authService';
 
 export default function AdminLogin() {
   const router = useRouter();
-  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [formData, setFormData] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -15,7 +15,7 @@ export default function AdminLogin() {
     setLoading(true);
     
     try {
-      const data = await login(formData.email, formData.password);
+      const data = await login(formData.username, formData.password);
       
       // Additional role check for Admin only
       if (data.user.role !== 'Admin') {
@@ -44,14 +44,14 @@ export default function AdminLogin() {
         
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+            <label htmlFor="username" className="block text-gray-700 mb-2">Username</label>
             <input
-              id="email"
-              type="email"
-              placeholder="Enter admin email"
+              id="username"
+              type="text"
+              placeholder="Enter admin username"
               className="w-full placeholder-gray-300 px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
-              value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
+              value={formData.username}
+              onChange={(e) => setFormData({...formData, username: e.target.value})}
               required
             />
           </div>

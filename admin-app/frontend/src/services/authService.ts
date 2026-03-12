@@ -1,13 +1,13 @@
 import api, { getDeviceId } from '../utils/api';
 import Cookies from 'js-cookie';
 
-export const login = async (email: string, password: string) => {
+export const login = async (username: string, password: string) => {
   const deviceId = getDeviceId();
   // Pass dummy device name, in production this would use user-agent parsing
   const deviceName = 'Admin Web Dashboard';
 
-  const response = await api.post('/auth/login', {
-    email,
+  const response = await api.post('/admin.php/login', {
+    username,
     password,
     deviceId,
     deviceName
@@ -30,11 +30,11 @@ export const logout = () => {
 };
 
 export const getUnverifiedDevices = async () => {
-  const response = await api.get('/auth/unverified-devices');
+  const response = await api.get('/admin.php/unverified-devices');
   return response.data;
 };
 
 export const verifyDevice = async (verificationDeviceId: number | string) => {
-  const response = await api.post('/auth/verify-device', { verificationDeviceId });
+  const response = await api.post('/admin.php/verify-device', { verificationDeviceId });
   return response.data;
 };

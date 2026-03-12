@@ -11,12 +11,18 @@ $input = json_decode(file_get_contents('php://input'), true);
 // JWT Middleware for Admin routes would go here
 
 switch ($path) {
+    case '/unverified-devices':
+        if ($method === 'GET') {
+            $stmt = $pdo->query("SELECT d.*, u.username FROM devices d JOIN users u ON d.user_id = u.id WHERE d.is_verified = 0");
+            echo json_encode($stmt->fetchAll());
+        }
+        break;
+
     case '/verify-device':
         if ($method === 'POST') {
-            $userId = $input['user_id'];
-            $deviceId = $input['device_id'];
-            $stmt = $pdo->prepare("UPDATE devices SET is_verified = 1 WHERE user_id = ? AND device_id = ?");
-            $stmt->execute([$userId, $deviceId]);
+            $deviceId = $input['verificationDeviceId'] ?? $input['device_id'];
+            $stmt = $pdo->prepare("UPDATE devices SET is_verified = 1 WHERE device_id = ?");
+            $stmt->execute([$deviceId]);
             echo json_encode(['success' => 'Device verified']);
         }
         break;

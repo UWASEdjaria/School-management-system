@@ -7,7 +7,7 @@ export default function RegisterPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({ 
     name: '', 
-    email: '', 
+    username: '', 
     password: '', 
     role: 'parent' 
   });
@@ -22,9 +22,7 @@ export default function RegisterPage() {
     
     try {
       await register({
-        firstName: formData.name.split(' ')[0],
-        lastName: formData.name.split(' ').slice(1).join(' ') || formData.name,
-        email: formData.email,
+        username: formData.username,
         password: formData.password,
         role: formData.role.charAt(0).toUpperCase() + formData.role.slice(1) // Capitalize role
       });
@@ -65,14 +63,14 @@ export default function RegisterPage() {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+            <label htmlFor="username" className="block text-gray-700 mb-2">Username</label>
             <input
-              id="email"
-              type="email"
-              placeholder="Enter your email"
+              id="username"
+              type="text"
+              placeholder="Enter your username"
               className="w-full placeholder-gray-300 px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
-              value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
+              value={formData.username}
+              onChange={(e) => setFormData({...formData, username: e.target.value})}
               required
             />
           </div>
